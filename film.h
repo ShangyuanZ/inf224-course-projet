@@ -25,6 +25,7 @@ public:
     int getChNumber() const;
 
     //other
+    ~Film();
     void displayDuree(std::ostream & s);
 
 

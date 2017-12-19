@@ -5,8 +5,17 @@
 
 Film::Film(){}
 
-Film::Film(std::string objetName, std::string fileName, int _duration, int * duree, int number):
-    Video(objetName,fileName,_duration),duree(duree),number(number){}
+Film::~Film(){
+    delete [] duree;
+}
+
+Film::Film(std::string objetName, std::string fileName, int _duration, int * _duree, int _number):
+    Video(objetName,fileName,_duration),number(_number){
+    duree = new int[_number];
+    for(int i = 0; i < _number; i++){
+        duree[i] = _duree[i];
+    }
+}
 
 //modificateur
 void Film::changeDuree(int * _duree, int _number){
@@ -31,4 +40,5 @@ void Film::displayDuree(std::ostream & s){
     }
     s << std::endl;
 }
+
 

@@ -56,4 +56,7 @@ int main(int argc, char* argv[]) {
     duration[2] = 24;
     f1->displayDuree(cout);
 
+    delete [] duration;
+    delete f1;
+
 }
