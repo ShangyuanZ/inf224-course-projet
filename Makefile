@@ -14,7 +14,7 @@ PROG = TP_inf
 #
 # Fichiers sources (NE PAS METTRE les .h ni les .o seulement les .cpp)
 #
-SOURCES = base.cpp main.cpp film.cpp
+SOURCES = base.cpp main.cpp film.cpp group.cpp
 
 #
 # Fichiers objets (ne pas modifier sauf si l'extension n'est pas .cpp)
