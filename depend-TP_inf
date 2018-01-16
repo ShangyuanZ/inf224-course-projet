@@ -1,0 +1,4 @@
+base.o: base.cpp base.h photo.h video.h
+main.o: main.cpp base.h photo.h video.h film.h
+film.o: film.cpp film.h video.h base.h
+group.o: group.cpp base.h group.h

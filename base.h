@@ -3,6 +3,8 @@
 
 #include <string>
 #include <iostream>
+#include <memory>
+
 
 
 class Base
@@ -27,5 +29,7 @@ public:
 
     virtual void objetDisplay() const = 0;
 };
+
+using BasePtr = std::shared_ptr<Base>;
 
 #endif // BASE_H

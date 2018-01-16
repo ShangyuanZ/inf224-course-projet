@@ -4,11 +4,13 @@
 
 #include <iostream>
 #include <string>
+#include <memory>
 
 #include"base.h"
 #include"photo.h"
 #include"video.h"
 #include"film.h"
+#include"group.h"
 
 using namespace std;
 
@@ -17,6 +19,14 @@ int main(int argc, char* argv[]) {
     /** test
      */
     cout << "hello world" << endl;
+
+    GroupPtr g = make_shared<Group>("groupB");
+
+    g->push_back( make_shared<Video>("ob200", "/cal/homes/szhang/inf224/drop.avi", 6));
+    g->push_back( make_shared<Photo>("ob300", "/cal/homes/szhang/inf224/flower.jpeg", 2.1f, 3.2f));
+
+    g->dispaly(cout);
+
 
     /*
     Base * c1 = new Base("ob1", "file1");
@@ -65,6 +75,7 @@ int main(int argc, char* argv[]) {
     delete [] duration;
     delete f1;
     */
+
 
 
 
