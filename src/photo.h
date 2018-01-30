@@ -34,4 +34,7 @@ public:
     void objetDisplay() const override {std::string line = "imagej " + getFileName() + " &"; system(line.c_str());}
 
 };
+        
+using PhotoPtr = std::shared_ptr<Photo>;
+        
 #endif // PHOTO_H

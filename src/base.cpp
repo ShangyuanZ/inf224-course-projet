@@ -2,8 +2,6 @@
 #include <iostream>
 
 #include "base.h"
-#include "photo.h"
-#include "video.h"
 
 
 /** constructer

@@ -11,6 +11,9 @@
 #include"video.h"
 #include"film.h"
 #include"group.h"
+#include"gestion.h"
+
+//remember add gestion.h to makefile
 
 using namespace std;
 

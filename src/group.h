@@ -3,8 +3,9 @@
 
 #include<list>
 #include<iostream>
-#include"base.h"
 #include<memory>
+
+#include"base.h"
 
 class Group:public std::list<BasePtr>{
 private:

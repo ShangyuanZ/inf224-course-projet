@@ -28,9 +28,8 @@ public:
     //other
     ~Film();
     void displayDuree(std::ostream & s);
-
-
-
 };
+
+using FilmPtr = std::shared_ptr<Film>;
 
 #endif // FILM_H

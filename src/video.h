@@ -33,6 +33,8 @@ public:
     void objetDisplay() const override {std::string line = "mpv " + getFileName() + " &"; system(line.c_str());}
 
 };
+        
+using VideoPtr = std::shared_ptr<Video>;
 
 #endif // VIDEO_H
 
