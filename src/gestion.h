@@ -12,13 +12,13 @@
 #include<map>
 #include<string>
 #include<memory>
+#include<iostream>
 
 #include"base.h"
 #include"group.h"
 #include"photo.h"
 #include"video.h"
 #include"film.h"
-#include"group.h"
 
 
 class Gestion{
@@ -48,16 +48,16 @@ public:
     GroupPtr createGroup(std::string groupname);
     
     //search files
-    BasePtr searchFile(std::string);
+    BasePtr searchFile(std::string fileName);
     
-    GroupPtr searchGroup(std::string);
+    GroupPtr searchGroup(std::string groupName);
     
     //display files
-    void displayFile(std::string);
+    void displayFile(std::string fileName, std::ostream s);
     
-    void displayGroup(std::string);
+    void displayGroup(std::string groupName, std::ostream s);
     
-    void play(std::string);
+    void play(std::string name);
     
 };
 

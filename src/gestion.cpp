@@ -10,6 +10,8 @@
 #include<map>
 #include<string>
 #include<memory>
+#include<exception>
+#include<iostream>
 
 #include "gestion.h"
 #include"base.h"
@@ -32,7 +34,7 @@ VideoPtr Gestion::createVideo(std::string objetName, std::string fileName, int _
 }
 
 FilmPtr Gestion::createFilm(std::string objetName, std::string fileName, int _duration, int * duree, int number){
-    objetMap[objetName] = std::make_shared<Film>(fileName, _duration, *duree, number);
+    objetMap[objetName] = std::make_shared<Film>(objetName, fileName, _duration, duree, number);
     return std::dynamic_pointer_cast<Film>(objetMap[objetName]);
 }
 
@@ -42,23 +44,35 @@ GroupPtr Gestion::createGroup(std::string groupname){
 }
 
 //search files
-BasePtr Gestion::searchFile(std::string){
-    
+BasePtr Gestion::searchFile(std::string fileName){
+    auto file = objetMap.find(fileName);
+    if (file != objetMap.end()){
+        return file->second;
+    }
+    else{
+        throw std::runtime_error("can't find " + fileName);
+    }
 }
 
-GroupPtr Gestion::searchGroup(std::string){
-    
+GroupPtr Gestion::searchGroup(std::string groupName){
+    auto group = groupMap.find(groupName);
+    if (group != groupMap.end()){
+        return group->second;
+    }
+    else{
+        throw std::runtime_error("can't find " + groupName);
+    }
 }
 
 //display files
-void Gestion::displayFile(std::string){
-    
+void Gestion::displayFile(std::string fileName, std::ostream s ){
+    searchFile(fileName)->display(s);
 }
 
-void Gestion::displayGroup(std::string){
-    
+void Gestion::displayGroup(std::string groupName, std::ostream s){
+    searchGroup(groupName)->dispaly(s);
 }
 
-void Gestion::play(std::string){
-    
+void Gestion::play(std::string fileName){
+    searchFile(fileName)->objetDisplay();
 }
