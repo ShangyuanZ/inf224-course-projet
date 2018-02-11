@@ -1,9 +1,0 @@
-*.o
-
-TP_inf
-
-Makefile~
-
-depend-TP_inf
-
-.gitignore~
